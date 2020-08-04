@@ -57,6 +57,7 @@ const Card: React.FC<PropsType> = ({ question, options, callback, setShowResult,
 
             <div className="question">
                 <h4>Q: {question}</h4>
+                {/* <p dangerouslySetInnerHTML={{ __html: question }}></p> */}
             </div>
 
             <form onSubmit={(e: React.FormEvent<EventTarget>) => callback(e, selectedAns, remainingQuestions, setRemainingQuestions)} className="question-form">
