@@ -56,7 +56,7 @@ const Card: React.FC<PropsType> = ({ question, options, callback, setShowResult,
             }
 
             <div className="question">
-                <h4>Q: {question}</h4>
+                <h4 dangerouslySetInnerHTML={{__html: "Q:"+question}}></h4>
                 {/* <p dangerouslySetInnerHTML={{ __html: question }}></p> */}
             </div>
 
