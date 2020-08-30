@@ -97,7 +97,7 @@ export const Home = () => {
     if (!quiz.length){ 
       return (
       <div className="home_container loadingImgConatiner">
-        <img src={process.env.PUBLIC_URL + "loading.gif"} alt=""/> 
+        <img src={process.env.PUBLIC_URL + "images/loading.gif"} alt=""/> 
       </div>
         )
     }
@@ -112,7 +112,7 @@ export const Home = () => {
       <div className="home_container">
         {
          !categories.length ? <> 
-         <div className="loadingImgConatiner"><img src={process.env.PUBLIC_URL + "loading.gif"} alt=""/></div>
+         <div className="loadingImgConatiner"><img src={process.env.PUBLIC_URL + "images/loading.gif"} alt=""/></div>
          </>
          :<>
         <div className="btn_container">
