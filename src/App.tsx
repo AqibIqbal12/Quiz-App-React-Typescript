@@ -1,8 +1,15 @@
 import React from 'react';
 import './App.css';
-import { Home } from './Components/Home'
+import { Home } from './Components/Home';
+import firebase from 'firebase/app';
+import 'firebase/messaging';
+import { initNotification } from './services/firebaseService';
 
 function App() {
+  if (firebase.messaging.isSupported()) {
+    initNotification();
+  }
+
   return (
     <>
       <div className="App">
