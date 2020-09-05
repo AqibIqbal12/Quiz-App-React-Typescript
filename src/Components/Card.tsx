@@ -14,23 +14,21 @@ const Card: React.FC<PropsType> = ({ question, options, callback, setShowResult,
     }
 
     useEffect(() => {
-
         let mounted = true;
-        setInterval(() => {
+        const interval = setInterval(() => {
             if (mounted) {
                 if (seconds > 0) {
                     setSeconds(--seconds)
                 }
                 if (seconds === 0) {
                     if (minutes === 0) {
+                        clearInterval(interval);
                         setShowResult(true)
                     }
                     else {
                         setMinutes(--minutes);
-                        // eslint-disable-next-line
-                        setSeconds(seconds = 59)
+                        setSeconds(59)
                     }
-
                 }
             }
 
@@ -40,7 +38,7 @@ const Card: React.FC<PropsType> = ({ question, options, callback, setShowResult,
             mounted = false;
         }
 
-    }, [])
+    }, [minutes, seconds, setShowResult])
 
     return (
         <div className="card_container">
